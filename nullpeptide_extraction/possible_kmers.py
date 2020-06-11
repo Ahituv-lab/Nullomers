@@ -7,9 +7,9 @@ def kmer_generate(lengthsL):
 		total_kmers+=[''.join(p) for p in itertools.product(AminoAcidsL, repeat=k)]
 	return total_kmers
 
-KmersL_1_15=kmer_generate(range(1,8))
+Peptide_KmersL=kmer_generate(range(1,8))
 		
 datafile=open("peptide_kmers_1_7nt","w")
-for i in KmersL_1_15:
+for i in Peptide_KmersL:
         datafile.write(str(i)+'\n')
 datafile.close()  
