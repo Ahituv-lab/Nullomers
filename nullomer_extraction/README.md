@@ -5,6 +5,7 @@ python extract_kmers.py
 
 Secondly we produce all possible kmers of the same lengths with the command:
 
-Third we generate the final file with the frequency of all kmers and nullomers for those kmer lengths.
+Third, we generate the final file with the frequency of all kmers and nullomers for those kmer lengths using the command:
+python generate_all_counts.py
 
 
