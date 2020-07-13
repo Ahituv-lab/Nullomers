@@ -28,7 +28,7 @@ function parse_commandline()
         default = ""
       "--nullomer_path", "-P"
         help = "path to directory containing nullomer substitution list"
-	default = "/lustre/scratch117/cellgen/team218/MH/nullomers/"
+	default = "/path/to/directory/"
     end
     return parse_args(s)
 end
@@ -55,9 +55,9 @@ if chromosome>0
     savefilename = replace(savefilename, ".tsv" => "_" * string(chromosome) * ".tsv");
 end
 
-mutfilename = "/lustre/scratch117/cellgen/team218/MH/nullomers/vcfs/Gnomad/snps_only_gnomad_afraw.vcf";
+mutfilename = "/path/to/snps_only_gnomad_afraw.vcf";
 if population!=""
-    mutfilename = "/lustre/scratch117/cellgen/team218/MH/nullomers/vcfs/gnomad_" * population * ".vcf";
+    mutfilename = "/path/to/gnomad_" * population * ".vcf";
 end
 if (chromosome>0) && (population=="")
     mutfilename = replace(mutfilename, ".vcf" => "_" * string(chromosome) * ".vcf");
