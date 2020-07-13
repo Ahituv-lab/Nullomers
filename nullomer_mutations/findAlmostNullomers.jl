@@ -26,12 +26,12 @@ function parse_commandline()
         default = 0
       "--genome_location", "-g"
         help = "path to genome .fa file"
-        default = "/lustre/scratch117/cellgen/team218/lh20/cellranger_genomes/refdata-cellranger-GRCh38-3.0.0/fasta/genome.fa"
+        default = "/path/to/genome/files/in/fasta/format"
       "--nullomer_path", "-p"
         help = "path to directory containing nullomer list"
-        default = "/lustre/scratch117/cellgen/team218/MH/nullomers/"
+        default = "/path/to/the/directory/where/files/are/stored"
       "--nullomer_file", "-f"
-        help = "file containing nullomer list"
+        help = "file containing nullomer list, one kmer per line"
         default = ""
     end
     return parse_args(s)
