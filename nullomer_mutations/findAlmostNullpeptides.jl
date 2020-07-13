@@ -23,10 +23,10 @@ function parse_commandline()
         default = 0
       "--proteome_location", "-p"
         help = "path to proteome .fa file"
-        default = "/lustre/scratch117/cellgen/team218/MH/nullomers/Gencode/gencode.v33.pc_translations.fa"
+        default = "/path/to/file/in/fasta/format"
       "--nullomer_path", "-n"
         help = "path to directory containing nullomer list"
-        default = "/lustre/scratch117/cellgen/team218/MH/nullomers/"
+        default = "/path/to/directory/"
     end
     return parse_args(s)
 end
