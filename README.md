@@ -2,11 +2,11 @@
 
 This repository contains the code used in the manuscript [Absent from DNA and protein: genomic characterization of nullomers and nullpeptides across functional categories and evolution](https://www.biorxiv.org/content/10.1101/2020.03.02.972422v1) by Georgakopolous-Soares et al. The folders contain scripts for identifying and analyzing nullomers from multiple genomes.
 
-##nullomer_extractions
+## nullomer_extractions
 
 
 
-##nullomer_mutations
+## nullomer_mutations
 
 This directory contains [Julia](https://docs.julialang.org/en/v1/) files that are used to identify all possible nullomer creating single basepair deletion, insertion and substitution in the human genome.
 
@@ -18,9 +18,9 @@ This directory contains [Julia](https://docs.julialang.org/en/v1/) files that ar
 
 Note that all of the above files will require editing to include suitable paths to genomes and other necessary resources.
 
-##nullomer_permutations
+## nullomer_permutations
 
-##nullomer_simulation
+## nullomer_simulation
 
-##nullpeptide_extraction
+## nullpeptide_extraction
 
