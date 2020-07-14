@@ -26,14 +26,7 @@ The findAlmostNullpeptides.jl script identifies all _amino acid_ substitutions t
 `perl /path/to/annovar/annotate_variation.pl -hgvs -buildver hg38 -dbtype wgEncodeGencodeBasicV33 /path/to/vcf/file/with/all/mutations/overlapping/coding/regions/all_cds_mutations.vcf /path/to/annovar/db/humandb/ -out /path/to/output/all_cds_mutations`
 * Extract the non-synonymous changes `cut -f 2-8 /path/to/output/all_cds_mutations.exonic_variant_function | grep -e '^nonsyn' | cut -f 2-7 | awk {'printf ("%s\t%s\t%s\t%s\t%s\n", $2, $3, $1, $5, $6)'} > /path/to/output/all_cds_mutations_nonsyn.tsv`
 * Process the output from findAlmostNullpeptides.jl to put into a smaller file. The shorter file is assumed to contain three columns with the transcript name (in Gencode/Ensembl format), the mutation (in AAposAA format, eg Q432W) and the index of the nullpeptide being created from the is mutation (refers to the index of the list used for findAlmostNullpeptides.jl) `grep ENST /path/to/file/nullpeptides5subspos.tsv | sed 's/\(ENST[[:digit:]]*\.[[:digit:]]*\)\t\([[:digit:]]*\)\t[A-Z]\([A-Z]\)[A-Z]:\([A-Z]\)\t[0-9]\t\([0-9]*\)/\1\t\3\2\4\t\5/' | sort -u > /path/to/file/nullpeptides5subspos_short.tsv`
-* To identify the mutations that correspond to these mutations run a small shell script. As this takes a long time it is recommended to split into smaller jobs on a high performance cluster and belowed it is assumed that the coordinates for the nullpeptide generating mutations are stored in files where 1,000 nullpeptides at a time were processed
-
-    n=`wc -l /path/to/nullpeptidesfile.txt`
-    nfiles=$((n/1000 + 1))
-    for ((i=1; i<=$nfiles; i++)) ; 
-    do 
-        <command for submitting job to scheduler> run_find_all_nullpeptide_mutations.sh $i ;
-    done
+* To identify the mutations that correspond to these mutations run a small shell script. As this takes a long time it is recommended to split into smaller jobs on a high performance cluster and belowed it is assumed that the coordinates for the nullpeptide generating mutations are stored in files where 1,000 nullpeptides at a time were processed `nfiles=$((n/1000 + 1)) ; for ((i=1; i<=$nfiles; i++)) ; do <command for submitting job to scheduler> run_find_all_nullpeptide_mutations.sh $i ; done` Here it is assumed that $n contains the number of nullpeptides.
 * The results can then be merged as `cat /path/to/files/all_cds_nonsyn_nullpeptide5subs_* | sort -u > /path/to/files/all_cds_nonsyn_nullpeptide5subs_uniq.tsv`
 * The total number of mutations is found as `wc -l /path/to/files/Gencode/all_cds_nonsyn_nullpeptide5subs_uniq.tsv`
 * We can add back the id of the nullpeptide as well `grep -f /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq.tsv /path/to/file/nullpeptides5subspos_short.tsv > /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq_nullpepinds.tsv
