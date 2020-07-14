@@ -3,8 +3,10 @@
 This repository contains the code used in the manuscript [Absent from DNA and protein: genomic characterization of nullomers and nullpeptides across functional categories and evolution](https://www.biorxiv.org/content/10.1101/2020.03.02.972422v1) by Georgakopolous-Soares et al. The folders contain scripts for identifying and analyzing nullomers from multiple genomes. Please note that this is not intended to be a package for nullomer analysis but rather a place where the code that was used for the manuscript can be accessed and reviewed.
 
 ## nullomer_extractions
-
-
+This directory contains a set of Python scripts that enable the extraction of all nullomers from a search space.
+* **extract_kmers.py** - this file scans the search space (FASTA format input) and counts the number of occurrences of every kmer. The range of kmer lengths to scan is provided as a variable. The results are saved in an output file. The example provided is for hg38 for kmer lengths between 1-15bps.
+* **possible_kmers.py** - this script produces all possible kmers to search if they are nullomers or not.
+* **generate_all_counts.py** - this script generates the final output file with the occurrences of each kmer including nullomers in the search space of interest.
 
 ## nullomer_mutations
 
