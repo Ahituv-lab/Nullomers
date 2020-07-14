@@ -38,4 +38,7 @@ The findAlmostNullpeptides.jl script identifies all _amino acid_ substitutions t
 ## nullomer_simulation
 
 ## nullpeptide_extraction
-
+This directory contains a set of Python scripts that enable the extraction of all nullpeptides from a proteome search space.
+* **extract_peptides.py** - this file scans the proteome search space (FASTA format input) and counts the number of occurrences of every peptide kmer. The range of kmer lengths to scan is provided as a variable. The results are saved in an output file. The example provided is for the reference human proteome for nullpeptide kmer lengths between 1-7aa.
+* **possible_kmers.py** - this script produces all possible peptide kmers to search if they are nullpeptides or not.
+* **generate_all_counts.py** - this script generates the final output file with the occurrences of each peptide kmer including nullpeptides in the proteome search space of interest.
