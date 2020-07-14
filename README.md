@@ -6,7 +6,7 @@ This repository contains the code used in the manuscript [Absent from DNA and pr
 This directory contains a set of Python scripts that enable the extraction of all nullomers from a search space.
 * **extract_kmers.py** - this file scans the search space (FASTA format input) and counts the number of occurrences of every kmer. The range of kmer lengths to scan is provided as a variable. The results are saved in an output file. The example provided is for hg38 for kmer lengths between 1-15bps.
 * **possible_kmers.py** - this script produces all possible kmers to search if they are nullomers or not.
-* **generate_all_counts.py** - this script generates the final output file with the occurrences of each kmer including nullomers in the search space of interest.
+* **generate_all_counts.py** - this script generates the final output file with the occurrences of each kmer including nullomers in the search space of interest. The output format is a tab delimited file with first column containing the kmer sequence and second column the occurrences in the search space.
 
 ## nullomer_mutations
 
@@ -34,8 +34,13 @@ The findAlmostNullpeptides.jl script identifies all _amino acid_ substitutions t
 * We can add back the id of the nullpeptide as well `grep -f /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq.tsv /path/to/file/nullpeptides5subspos_short.tsv > /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq_nullpepinds.tsv`
 
 ## nullomer_permutations
+This directory contains the Python scripts with which the occurrences of all kmers with 1bp Hamming distance from each nullomer were estimated.
+The input format is a tab delimited file with first column containing the kmer sequence and second column the occurrences in the search space.
+* ***hamming_distance_nullomers_gen.py*** This script estimates the median number of occurrences of all 1bp Hamming distance kmers for each nullomer.
 
 ## nullomer_simulation
+This directory contains the Python script with which simulations of sequences were performed controlling for mono / di / trinucleotide context.
+* ***sim_sequences.py*** - this file generates the simulated FASTA files (n=100). We then extracted the nullomers and nullpeptides of the simulated genomes and proteomes using the nullomer_extraction and nullpeptide_extraction scripts.
 
 ## nullpeptide_extraction
 This directory contains a set of Python scripts that enable the extraction of all nullpeptides from a proteome search space.
