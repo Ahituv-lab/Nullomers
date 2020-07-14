@@ -29,7 +29,7 @@ The findAlmostNullpeptides.jl script identifies all _amino acid_ substitutions t
 * To identify the mutations that correspond to these mutations run a small shell script. As this takes a long time it is recommended to split into smaller jobs on a high performance cluster and belowed it is assumed that the coordinates for the nullpeptide generating mutations are stored in files where 1,000 nullpeptides at a time were processed `nfiles=$((n/1000 + 1)) ; for ((i=1; i<=$nfiles; i++)) ; do <command for submitting job to scheduler> run_find_all_nullpeptide_mutations.sh $i ; done` Here it is assumed that $n contains the number of nullpeptides.
 * The results can then be merged as `cat /path/to/files/all_cds_nonsyn_nullpeptide5subs_* | sort -u > /path/to/files/all_cds_nonsyn_nullpeptide5subs_uniq.tsv`
 * The total number of mutations is found as `wc -l /path/to/files/Gencode/all_cds_nonsyn_nullpeptide5subs_uniq.tsv`
-* We can add back the id of the nullpeptide as well `grep -f /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq.tsv /path/to/file/nullpeptides5subspos_short.tsv > /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq_nullpepinds.tsv
+* We can add back the id of the nullpeptide as well `grep -f /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq.tsv /path/to/file/nullpeptides5subspos_short.tsv > /path/to/file/all_cds_nonsyn_one_transcript_nullpeptide5subs_uniq_nullpepinds.tsv`
 
 ## nullomer_permutations
 
