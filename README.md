@@ -1,3 +1,9 @@
+
+Go to GitHub.
+Ahituv-lab/Nullomers
+
+10.5281/zenodo.5148239 
+
 # Nullomer finding code
 
 This repository contains the code used in the manuscript [Absent from DNA and protein: genomic characterization of nullomers and nullpeptides across functional categories and evolution](https://www.biorxiv.org/content/10.1101/2020.03.02.972422v1) by Georgakopolous-Soares et al. The folders contain scripts for identifying and analyzing nullomers from multiple genomes. Please note that this is not intended to be a package for nullomer analysis but rather a place where the code that was used for the manuscript can be accessed and reviewed.
