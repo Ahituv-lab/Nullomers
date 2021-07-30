@@ -2,7 +2,7 @@
 Go to GitHub.
 Ahituv-lab/Nullomers
 
-10.5281/zenodo.5148239 
+![image](https://user-images.githubusercontent.com/55643546/127638251-26bac8fe-3b40-4751-bc67-1192fe07bbb0.png)
 
 # Nullomer finding code
 
