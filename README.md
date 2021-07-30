@@ -1,8 +1,8 @@
 
-Go to GitHub.
-Ahituv-lab/Nullomers
 
-![image](https://user-images.githubusercontent.com/55643546/127638251-26bac8fe-3b40-4751-bc67-1192fe07bbb0.png)
+[![DOI](https://zenodo.org/badge/271546726.svg)](https://zenodo.org/badge/latestdoi/271546726)
+
+
 
 # Nullomer finding code
 
